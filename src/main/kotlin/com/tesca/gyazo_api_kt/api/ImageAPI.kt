@@ -5,7 +5,7 @@ import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.fuel.httpUpload
 import com.github.kittinunf.result.Result
-import com.tesca.gyazo_api_kt.GyazoApiKt
+import com.tesca.gyazo_api_kt.GyazoApi
 import com.tesca.gyazo_api_kt.data.DeleteResponse
 import com.tesca.gyazo_api_kt.data.UploadResponse
 import com.tesca.gyazo_api_kt.data.images_response.ImagesResponse
@@ -18,9 +18,9 @@ import java.util.*
 /**
  * 画像周りのAPI
  *
- * @property gyazoApi [GyazoApiKt]
+ * @property gyazoApi [GyazoApi]
  */
-class ImageAPI(private val gyazoApi: GyazoApiKt) {
+class ImageAPI(private val gyazoApi: GyazoApi) {
     //Jsonの設定
     private val json = Json {
         coerceInputValues = true
@@ -110,7 +110,7 @@ class ImageAPI(private val gyazoApi: GyazoApiKt) {
     @OptIn(ExperimentalSerializationApi::class)
     fun upload(
         imageData: InputStream,
-        accessPolicy: GyazoApiKt.AccessPolicy = GyazoApiKt.AccessPolicy.ANY_ONE,
+        accessPolicy: GyazoApi.AccessPolicy = GyazoApi.AccessPolicy.ANY_ONE,
         metadataIsPublic: Boolean = false,
         refererURL: String = "",
         app: String = "",

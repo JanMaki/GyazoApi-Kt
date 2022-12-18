@@ -7,7 +7,7 @@ import com.tesca.gyazo_api_kt.api.ImageAPI
  *
  * @property accessToken アクセストークン
  */
-class GyazoApiKt(val accessToken: String) {
+class GyazoApi(val accessToken: String) {
     //画像を扱うためのAPI
     val imageAPI = ImageAPI(this)
 

@@ -1,6 +1,6 @@
 package com.tesca.gyazo_api_kt.serializer
 
-import com.tesca.gyazo_api_kt.GyazoApiKt
+import com.tesca.gyazo_api_kt.GyazoApi
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializer
@@ -11,30 +11,30 @@ import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
 /**
- * [GyazoApiKt.AccessPolicy]のシリアライザー
+ * [GyazoApi.AccessPolicy]のシリアライザー
  *
  */
 @OptIn(ExperimentalSerializationApi::class)
-@Serializer(forClass = GyazoApiKt.AccessPolicy::class)
-class AccessPolicySerializer : KSerializer<GyazoApiKt.AccessPolicy> {
+@Serializer(forClass = GyazoApi.AccessPolicy::class)
+class AccessPolicySerializer : KSerializer<GyazoApi.AccessPolicy> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("AccessPolicy", PrimitiveKind.STRING)
 
-    override fun serialize(encoder: Encoder, value: GyazoApiKt.AccessPolicy) {
+    override fun serialize(encoder: Encoder, value: GyazoApi.AccessPolicy) {
         //エンコード
         encoder.encodeString(value.text)
     }
 
 
-    override fun deserialize(decoder: Decoder): GyazoApiKt.AccessPolicy {
+    override fun deserialize(decoder: Decoder): GyazoApi.AccessPolicy {
         //デコード
         val string = decoder.decodeString()
 
         //全てのAccessPolicyを確認
-        GyazoApiKt.AccessPolicy.values().forEach {
+        GyazoApi.AccessPolicy.values().forEach {
             //テキストが合致するかを確認
             if (string == it.text) return it
         }
 
-        return GyazoApiKt.AccessPolicy.NONE
+        return GyazoApi.AccessPolicy.NONE
     }
 }

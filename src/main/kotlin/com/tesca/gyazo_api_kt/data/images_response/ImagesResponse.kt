@@ -1,6 +1,6 @@
 package com.tesca.gyazo_api_kt.data.images_response
 
-import com.tesca.gyazo_api_kt.GyazoApiKt
+import com.tesca.gyazo_api_kt.GyazoApi
 import com.tesca.gyazo_api_kt.serializer.AccessPolicySerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -26,7 +26,7 @@ data class ImagesResponse(
     @SerialName("permalink_url") val permalinkUrl: String? = "",
     @SerialName("thumb_url") val thumbUrl: String? = "",
     @SerialName("url") val url: String? = "",
-    @SerialName("access_policy") val accessPolicy: @Serializable(with = AccessPolicySerializer::class) GyazoApiKt.AccessPolicy? = GyazoApiKt.AccessPolicy.NONE,
+    @SerialName("access_policy") val accessPolicy: @Serializable(with = AccessPolicySerializer::class) GyazoApi.AccessPolicy? = GyazoApi.AccessPolicy.NONE,
     @SerialName("type") val type: String? = "",
     @SerialName("created_at") val createdAt: String? = "",
     @SerialName("metadata") val metadata: Metadata = Metadata(),

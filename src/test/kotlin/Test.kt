@@ -1,8 +1,8 @@
 import com.github.kittinunf.fuel.httpDownload
-import com.tesca.gyazo_api_kt.GyazoApiKt
+import com.tesca.gyazo_api_kt.GyazoApi
 
 fun main(args: Array<String>){
-    val api = GyazoApiKt(args[0])
+    val api = GyazoApi(args[0])
 
     //一覧を取得
     val listResult = api.imageAPI.list()
