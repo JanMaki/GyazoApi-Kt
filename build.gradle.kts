@@ -8,6 +8,8 @@ plugins {
     kotlin("plugin.serialization") version "1.7.21"
 }
 
+group = "com.tesca.gyazo_api_kt"
+
 repositories {
     mavenCentral()
     gradlePluginPortal()
